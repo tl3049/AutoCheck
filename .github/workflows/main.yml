@@ -35,5 +35,6 @@ jobs:
         EMAIL_USER: ${{ secrets.EMAIL_USER }}
         EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
         TO_ADDR: ${{ secrets.TO_ADDR }}
+        TO_ADDR_2: ${{ secrets.TO_ADDR_2 }}
         URL: ${{ secrets.URL }}
         NAME: ${{ secrets.NAME }}
