@@ -2,14 +2,14 @@ import time
 import schedule
 import smtplib, ssl
 from email.message import EmailMessage
-from dotenv import load_dotenv
+#from dotenv import load_dotenv
 from check import check_author
 import os
 
-load_dotenv()
-EMAIL_USER = os.getenv("EMAIL_USER")
-TO_ADDR = os.getenv("TO_ADDR")
-EMAIL_PASS = os.getenv("EMAIL_PASS")
+#load_dotenv()
+EMAIL_USER = os.environ.get("EMAIL_USER")
+TO_ADDR = os.environ.get("TO_ADDR")
+EMAIL_PASS = os.environ.get("EMAIL_PASS")
 WORKING = True
 
 
@@ -40,13 +40,15 @@ def job():
         print("条件未满足。")
 
 
+if __name__ == '__main__':
+    job()
 
 # # ========== 定时调度 ==========
 #schedule.every().hour.do(job)   # 每小时执行一次
-schedule.every(1).minutes.do(job)
-print("定时任务启动，每隔 1 小时运行一次...")
-while WORKING:
-    schedule.run_pending()
-    time.sleep(5)
+# schedule.every(1).minutes.do(job)
+# print("定时任务启动，每隔 1 小时运行一次...")
+# while WORKING:
+#     schedule.run_pending()
+#     time.sleep(5)
 
-print("This is the end of the program.")
+# print("This is the end of the program.")
