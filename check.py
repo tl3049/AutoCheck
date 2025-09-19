@@ -19,8 +19,8 @@ def check_author():
 
     words = ""
     for title, link in matches:
-        if "2024" in title.strip():
-        #if "2025" in title.strip():
+        #if "2024" in title.strip():
+        if "2025" in title.strip():
             #print(title.strip(), "=>", link)
             page_content = requests.get(link, headers=head).text
             soup = BeautifulSoup(page_content, "html.parser")
@@ -29,8 +29,8 @@ def check_author():
                 # 假设你的tag对象是paper_tag
                 paper_title = paper.find('div', class_='title').get_text(strip=True)
                 paper_authors = paper.find('div', class_='authors').get_text(strip=True)
-                if "Detecting Change" in paper_title and "Ye Zhu" in paper_authors:
-                #if "Difference Learning" in paper_title and "Ye Zhu" in paper_authors:
+                #if "Detecting Change" in paper_title and "Ye Zhu" in paper_authors:
+                if "Difference Learning" in paper_title and "Ye Zhu" in paper_authors:
                     published = True
                     words = f"The paper titled \"{paper_title}\" authored by \"{paper_authors}\", has been published in IJCAI 2025."
 

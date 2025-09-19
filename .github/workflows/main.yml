@@ -4,9 +4,9 @@
 name: AutoCheck
 
 on:
-  schedule:
+  #schedule:
     # 设置启动时间，为 UTC，每小时启动一次
-    - cron: '0 * * * *'
+  #  - cron: '0 * * * *'
   workflow_dispatch:
 
 permissions:
