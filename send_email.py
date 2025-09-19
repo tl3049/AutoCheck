@@ -40,10 +40,6 @@ def job():
         print("条件未满足。")
 
 
-# subject = "This is a test email"
-# body = "Hi, Please ignore this message"
-# send_email(subject, body)
-
 
 # # ========== 定时调度 ==========
 #schedule.every().hour.do(job)   # 每小时执行一次
