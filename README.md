@@ -1,4 +1,4 @@
-# 📄 Paper Publication Checker & Email Notifier (GitHub Actions Enabled)
+# Paper Publication Checker & Email Notifier (GitHub Actions Enabled)
 
 This project automatically checks whether a target academic paper has been published in a conference proceeding (e.g., 2025) and notifies recipients via email once it is available.  
 
