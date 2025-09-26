@@ -28,16 +28,16 @@ def send_email(subject: str, body: str, addr: str):
 
 # ========== Job Function ==========
 def job(name, url):
-    print("任务开始执行...")
+    print("Excuting the job...")
     published, words = check_author(name, url)#check if the paper is published
     if published:
-        subject = "您的论文已出版✅"
+        subject = "Your paper has been published✅"
         body = "Congratulations! " + words
         send_email(subject, body, TO_ADDR)#send the msg to the first recipient
         send_email(subject, body, TO_ADDR_2)#send the msg to the second recipient
-        print("已发送邮件。")
+        print("Mail sent successfully.")
     else:
-        print("条件未满足。")
+        print("Not published yet.")
 
 
 if __name__ == '__main__':
