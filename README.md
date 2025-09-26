@@ -40,22 +40,8 @@ Runs the send_email.py job on a cron schedule
 
 
 
-- **`USAGE`**:
+## USAGE
 
-Automated Checks with GitHub Actions
+- Add the following secrets in your GitHub repository settings: EMAIL_USER, EMAIL_PASS, TO_ADDR, TO_ADDR_2, NAME, URL
 
-Add the following secrets in your GitHub repository settings:
-
-EMAIL_USER
-
-EMAIL_PASS
-
-TO_ADDR
-
-TO_ADDR_2
-
-NAME
-
-URL
-
-The workflow will run automatically on the defined cron schedule.
+- The workflow will run automatically on the defined cron schedule by enabling the GitHub Actions
