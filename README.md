@@ -6,17 +6,17 @@ It combines **web scraping (BeautifulSoup + requests)** with an **automated emai
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 - **`check.py`**  
-  - Scrapes the target conference proceeding website:contentReference[oaicite:0]{index=0}  
+  - Scrapes the target conference proceeding website: 
   - Searches for a paper with:
     - A specified keyword in the title (e.g., *Learning*)  
     - A target author name  
   - Returns whether the paper is published and its details  
 
 - **`send_email.py`**  
-  - Imports `check_author` from `check.py`:contentReference[oaicite:1]{index=1}  
+  - Imports `check_author` from `check.py`:
   - Uses Gmail SMTP (SSL) to send notification emails  
   - Reads configuration from environment variables:
     - `EMAIL_USER` – sender Gmail account  
@@ -28,9 +28,34 @@ It combines **web scraping (BeautifulSoup + requests)** with an **automated emai
     1. Check if the target paper is published  
     2. Send email(s) if the condition is met  
 
-- **`requirements.txt`**:contentReference[oaicite:2]{index=2}  
+- **`requirements.txt`**:
   Required dependencies:
   ```txt
   schedule
   bs4
   requests
+
+- **`main.yml`**:
+Runs the send_email.py job on a cron schedule
+
+
+
+- **`USAGE`**:
+
+Automated Checks with GitHub Actions
+
+Add the following secrets in your GitHub repository settings:
+
+EMAIL_USER
+
+EMAIL_PASS
+
+TO_ADDR
+
+TO_ADDR_2
+
+NAME
+
+URL
+
+The workflow will run automatically on the defined cron schedule.
