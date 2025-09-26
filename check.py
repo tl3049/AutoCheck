@@ -26,7 +26,7 @@ def check_author(name, url):
             for paper in papers:
                 paper_title = paper.find('div', class_='title').get_text(strip=True)#get the title
                 paper_authors = paper.find('div', class_='authors').get_text(strip=True)#get the authors
-                if "Difference Learning" in paper_title and name in paper_authors:#condition to check
+                if "Learning" in paper_title and name in paper_authors:#condition to check
                     published = True
                     words = f"The paper titled \"{paper_title}\" authored by \"{paper_authors}\", has been published in the 2025 proceeding."
     return published, words
